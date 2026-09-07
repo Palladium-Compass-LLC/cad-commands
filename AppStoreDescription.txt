@@ -1,0 +1,37 @@
+CAD Commands — App Store Description
+========================================
+
+SHORT DESCRIPTION (subtitle, ~30 characters)
+CAD command reference
+
+PROMOTIONAL TEXT (~170 characters)
+Search 500+ CAD commands, keyboard shortcuts, and favorites. Built by a drafter with real experience on complex designs. 25 essentials free; Pro unlocks everything.
+
+FULL DESCRIPTION
+CAD Commands is a searchable reference app for CAD drafters and designers — whether you're learning in the classroom or working on the job.
+
+WHAT YOU CAN DO
+• Search 500+ commands by name, alias, or keyword
+• Browse commands by category: Drawing, Modifying, Annotation, 3D, and more
+• Filter Very Common commands — the tools you'll use every day
+• Read clear descriptions, usage notes, examples, and practical tips
+• Access 25 essential commands for free
+
+PRO UNLOCKS
+• The full command library
+• Keyboard shortcuts for Windows and Mac
+• Favorites tab to save your most-used commands
+• One-time purchase — no subscription
+
+BUILT FROM EXPERIENCE
+This app was created by someone with hands-on experience working with CAD commands on real projects, including complex, detail-heavy designs. The content is written for quick lookup and practical learning — not copied from official manuals.
+
+CAD Commands is an independent app and is not affiliated with any CAD software vendor.
+
+SUPPORT CONTACT
+palladiumcompass@icloud.com
+
+KEYWORDS (100 characters max, comma-separated)
+cad,commands,drafting,reference,dictionary,shortcuts,architecture,engineering,design,learn,drafter
+
+EOF

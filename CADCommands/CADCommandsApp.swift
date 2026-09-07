@@ -1,17 +1,28 @@
-//
-//  CADCommandsApp.swift
-//  CADCommands
-//
-//  Created by Jonathan T. on 9/7/26.
-//
-
 import SwiftUI
 
 @main
 struct CADCommandsApp: App {
+    @State private var commandRepository = CommandRepository()
+    @State private var shortcutRepository = ShortcutRepository()
+    @State private var favoritesManager = FavoritesManager()
+    @State private var storeManager = StoreManager()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if ScreenshotMode.isExporting {
+                ScreenshotExporterView(
+                    commandRepository: commandRepository,
+                    shortcutRepository: shortcutRepository,
+                    favoritesManager: favoritesManager,
+                    storeManager: storeManager
+                )
+            } else {
+                ContentView()
+                    .environment(commandRepository)
+                    .environment(shortcutRepository)
+                    .environment(favoritesManager)
+                    .environment(storeManager)
+            }
         }
     }
 }
