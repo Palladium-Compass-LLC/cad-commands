@@ -5,7 +5,7 @@ SHORT DESCRIPTION (subtitle, ~30 characters)
 CAD command reference
 
 PROMOTIONAL TEXT (~170 characters)
-Search 500+ CAD commands, keyboard shortcuts, and favorites. Built by a drafter with real experience on complex designs. 25 essentials free; Pro unlocks everything.
+Search 500+ CAD commands, keyboard shortcuts, and favorites. From Palladium Compass LLC — 25 essentials free; Pro unlocks everything.
 
 FULL DESCRIPTION
 CAD Commands is a searchable reference app for CAD drafters and designers — whether you're learning in the classroom or working on the job.
@@ -24,7 +24,7 @@ PRO UNLOCKS
 • One-time purchase — no subscription
 
 BUILT FROM EXPERIENCE
-This app was created by someone with hands-on experience working with CAD commands on real projects, including complex, detail-heavy designs. The content is written for quick lookup and practical learning — not copied from official manuals.
+Palladium Compass LLC created this app from hands-on experience with CAD commands on real projects, including complex, detail-heavy designs. The content is written for quick lookup and practical learning — not copied from official manuals.
 
 CAD Commands is an independent app and is not affiliated with any CAD software vendor.
 

@@ -18,14 +18,14 @@ struct PaywallView: View {
                         Text("CAD Commands Pro")
                             .font(.largeTitle.bold())
 
-                        Text("The complete CAD command reference — built from real drafting experience on complex designs.")
+                        Text("The complete CAD command reference from Palladium Compass LLC.")
                             .font(.body)
                             .foregroundStyle(.secondary)
                             .multilineTextAlignment(.center)
                     }
 
                     VStack(alignment: .leading, spacing: 16) {
-                        FeatureRow(icon: "person.fill.checkmark", title: "Built by a working drafter", subtitle: "Created by someone with hands-on experience using these commands on complex designs")
+                        FeatureRow(icon: "checkmark.seal.fill", title: "Built by Palladium Compass LLC", subtitle: "Independent reference content written from real drafting experience on complex designs")
                         FeatureRow(icon: "book.fill", title: "\(repository.totalCommandCount)+ commands", subtitle: "Full searchable dictionary with aliases, categories, and Very Common labels")
                         FeatureRow(icon: "lightbulb.fill", title: "Usage examples & tips", subtitle: "Learn faster with real-world guidance")
                         FeatureRow(icon: "magnifyingglass", title: "Instant search", subtitle: "Find any command by name, alias, or keyword")

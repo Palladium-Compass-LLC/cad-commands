@@ -33,7 +33,7 @@ struct AboutView: View {
 
                         Pro unlocks the full command library, keyboard shortcuts for Windows and Mac, and a favorites tab so your go-to commands are always one tap away.
 
-                        This app was created by a drafter and designer with hands-on experience using these commands on real projects — from everyday drafting workflows to complex, detail-heavy designs. The descriptions and tips reflect practical use in the field, not copied manual text.
+                        This app was created by Palladium Compass LLC from hands-on experience using these commands on real projects — from everyday drafting workflows to complex, detail-heavy designs. The descriptions and tips reflect practical use in the field, not copied manual text.
                         """
                     )
 
