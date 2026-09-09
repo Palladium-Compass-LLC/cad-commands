@@ -29,7 +29,7 @@ This app was created by someone with hands-on experience working with CAD comman
 CAD Commands is an independent app and is not affiliated with any CAD software vendor.
 
 SUPPORT CONTACT
-palladiumcompass@icloud.com
+Dev@palladiumcompass.com
 
 KEYWORDS (100 characters max, comma-separated)
 cad,commands,drafting,reference,dictionary,shortcuts,architecture,engineering,design,learn,drafter
