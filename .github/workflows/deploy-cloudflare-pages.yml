@@ -34,25 +34,22 @@ jobs:
         run: npm install -g wrangler@3
 
       - name: Verify Cloudflare credentials
-        run: |
-          echo "Checking Cloudflare account access..."
-          wrangler whoami
-          echo ""
-          echo "Existing Pages projects:"
-          wrangler pages project list
+        run: wrangler whoami
 
-      - name: Create Pages project if needed
+      - name: Ensure Pages project exists
         run: |
-          wrangler pages project create cad-commands --production-branch=main || true
+          response="$(curl -sS -w "\n%{http_code}" \
+            -X POST "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"cad-commands","production_branch":"main"}')"
+          http_code="$(echo "$response" | tail -n1)"
+          body="$(echo "$response" | sed '$d')"
+          echo "$body"
+          if [[ "$http_code" != "200" && "$http_code" != "409" ]]; then
+            echo "Failed to ensure Pages project exists (HTTP ${http_code})."
+            exit 1
+          fi
 
       - name: Deploy to Cloudflare Pages
-        run: |
-          wrangler pages deploy docs \
-            --project-name=cad-commands \
-            --branch=main \
-            --commit-dirty=true
-
-      - name: Confirm deployment
-        run: |
-          echo "Pages projects after deploy:"
-          wrangler pages project list
+        run: wrangler pages deploy docs --project-name=cad-commands --commit-dirty=true
