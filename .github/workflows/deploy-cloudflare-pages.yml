@@ -18,6 +18,9 @@ jobs:
     permissions:
       contents: read
     name: Deploy docs to Cloudflare Pages
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,8 +33,26 @@ jobs:
       - name: Install Wrangler
         run: npm install -g wrangler@3
 
+      - name: Verify Cloudflare credentials
+        run: |
+          echo "Checking Cloudflare account access..."
+          wrangler whoami
+          echo ""
+          echo "Existing Pages projects:"
+          wrangler pages project list
+
+      - name: Create Pages project if needed
+        run: |
+          wrangler pages project create cad-commands --production-branch=main || true
+
       - name: Deploy to Cloudflare Pages
-        run: wrangler pages deploy docs --project-name=cad-commands --commit-dirty=true
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          wrangler pages deploy docs \
+            --project-name=cad-commands \
+            --branch=main \
+            --commit-dirty=true
+
+      - name: Confirm deployment
+        run: |
+          echo "Pages projects after deploy:"
+          wrangler pages project list
