@@ -1,8 +1,7 @@
 import SwiftUI
 
 struct AboutView: View {
-    private static let supportEmail = "Dev@palladiumcompass.com"
-    private static let supportURL = URL(string: "https://palladiumcompass.com/")!
+    private static let supportURL = URL(string: "https://palladiumcompass.com/#contact")!
     private static let privacyURL = URL(string: "https://palladiumcompass.com/privacy.html")!
 
     @Environment(\.dismiss) private var dismiss
@@ -71,9 +70,9 @@ struct AboutView: View {
                         Text("Questions, feedback, or help with purchases and restores:")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
-                        Link(Self.supportEmail, destination: URL(string: "mailto:\(Self.supportEmail)")!)
+                        Link("Contact form", destination: Self.supportURL)
                             .font(.subheadline)
-                        Link("Support website", destination: Self.supportURL)
+                        Link("Support website", destination: URL(string: "https://palladiumcompass.com/")!)
                             .font(.subheadline)
                         Link("Privacy Policy", destination: Self.privacyURL)
                             .font(.subheadline)

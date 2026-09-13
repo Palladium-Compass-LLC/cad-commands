@@ -29,7 +29,8 @@ Palladium Compass LLC created this app from hands-on experience with CAD command
 CAD Commands is an independent app and is not affiliated with any CAD software vendor.
 
 SUPPORT CONTACT
-Dev@palladiumcompass.com
+Use the contact form at https://palladiumcompass.com/#contact
+(Privacy inquiries can use the same form.)
 
 KEYWORDS (100 characters max, comma-separated)
 cad,commands,drafting,reference,dictionary,shortcuts,architecture,engineering,design,learn,drafter

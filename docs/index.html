@@ -16,11 +16,50 @@
   </header>
 
   <main class="container">
-    <section class="card">
+    <section class="card" id="contact">
       <h2>Contact</h2>
-      <p>For questions, feedback, or help with a purchase:</p>
-      <p><a href="mailto:Dev@palladiumcompass.com">Dev@palladiumcompass.com</a></p>
-      <p class="muted">We usually respond within a few business days.</p>
+      <p>For questions, feedback, or help with a purchase, send us a message:</p>
+
+      <form id="contact-form" class="contact-form" action="#" method="post">
+        <div class="hp-field" aria-hidden="true">
+          <label for="company">Company<input type="text" id="company" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <label>
+          Your name
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+
+        <label>
+          Your email
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+
+        <label>
+          Topic
+          <select name="topic" required>
+            <option value="General support">General support</option>
+            <option value="Pro purchase or restore">Pro purchase or restore</option>
+            <option value="Privacy question">Privacy question</option>
+            <option value="Feedback">Feedback</option>
+          </select>
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" required placeholder="How can we help?"></textarea>
+        </label>
+
+        <input type="hidden" name="_subject" value="CAD Commands support request">
+        <button type="submit">Send message</button>
+        <p id="form-status" class="muted" role="status"></p>
+      </form>
+
+      <p class="contact-alt muted">
+        Prefer email?
+        <button type="button" class="link-button" id="reveal-email">Show email address</button>
+        <span id="email-display" hidden></span>
+      </p>
     </section>
 
     <section class="card">
@@ -72,8 +111,6 @@
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="contact.js"></script>
 </body>
 </html>
