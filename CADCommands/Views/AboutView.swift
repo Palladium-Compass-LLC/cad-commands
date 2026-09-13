@@ -70,7 +70,7 @@ struct AboutView: View {
                         Text("Questions, feedback, or help with purchases and restores:")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
-                        Link("Contact form", destination: Self.supportURL)
+                        Link("Email support", destination: Self.supportURL)
                             .font(.subheadline)
                         Link("Support website", destination: URL(string: "https://palladiumcompass.com/")!)
                             .font(.subheadline)
