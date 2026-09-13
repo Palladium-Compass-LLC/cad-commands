@@ -1,11 +1,6 @@
 name: Deploy support site to Cloudflare Pages
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "docs/**"
-      - ".github/workflows/deploy-cloudflare-pages.yml"
   workflow_dispatch:
 
 concurrency:
@@ -36,20 +31,10 @@ jobs:
       - name: Verify Cloudflare credentials
         run: wrangler whoami
 
-      - name: Ensure Pages project exists
-        run: |
-          response="$(curl -sS -w "\n%{http_code}" \
-            -X POST "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-            -H "Content-Type: application/json" \
-            -d '{"name":"cad-commands","production_branch":"main"}')"
-          http_code="$(echo "$response" | tail -n1)"
-          body="$(echo "$response" | sed '$d')"
-          echo "$body"
-          if [[ "$http_code" != "200" && "$http_code" != "409" ]]; then
-            echo "Failed to ensure Pages project exists (HTTP ${http_code})."
-            exit 1
-          fi
-
       - name: Deploy to Cloudflare Pages
-        run: wrangler pages deploy docs --project-name=cad-commands --commit-dirty=true
+        run: |
+          set -x
+          wrangler pages deploy docs --project-name=cad-commands --commit-dirty=true 2>&1 | tee deploy.log
+          echo ""
+          echo "=== Deployment output above ==="
+          grep -i "pages.dev" deploy.log || true
