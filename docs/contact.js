@@ -1,6 +1,6 @@
 (function () {
   function buildSupportEmail() {
-    var user = [68, 101, 118].map(function (c) {
+    var user = [115, 117, 112, 112, 111, 114, 116].map(function (c) {
       return String.fromCharCode(c);
     }).join("");
     var host = [
