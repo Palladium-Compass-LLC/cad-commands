@@ -181,7 +181,7 @@ private struct ProBannerView: View {
             Label("Unlock the Full Dictionary", systemImage: "lock.open.display")
                 .font(.headline)
 
-            Text("Search 500+ commands, shortcuts, and favorites — from Palladium Compass LLC.")
+            Text("Search 500+ commands, shortcuts, and favorites — from CAD Commands.")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
 
